@@ -11,8 +11,8 @@ if [ "$1" = 'oauth2_proxy' -a "$(id -u)" = '0' ]; then
     exec su-exec oauth2_proxy "$0" "$@"
 fi
 
-if [ ! -z ${HTACCESS} ]; then
-    echo "${HTACCESS}" >> /conf/htaccess
+if [ ! -z ${HTPASSWD} ]; then
+    echo "${HTPASSWD}" >> /conf/htpasswd
 fi
 
 if [ "$1" = 'oauth2_proxy' ]; then
