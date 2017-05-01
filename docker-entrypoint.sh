@@ -11,6 +11,7 @@ if [ "$1" = 'oauth2_proxy' -a "$(id -u)" = '0' ]; then
     exec su-exec oauth2_proxy "$0" "$@"
 fi
 
+# populate htpasswd file with SHA hash
 if [ ! -z ${HTPASSWD} ]; then
     echo "${HTPASSWD}" >> /conf/htpasswd
 fi
